@@ -8,6 +8,8 @@ import ThirdTab from "../AppTabs/ThirdTab";
 import FourthTab from "../AppTabs/FourthTab";
 import Icon from 'react-native-ionicons'
 import NewScreen from "../Screens/NewScreen";
+import NewSecondScreen from "../Screens/NewSecondScreen";
+import NewThirdScreen from "../Screens/NewThirdScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -55,6 +57,8 @@ const AppNavigator = props => {
         <Stack.Navigator>
             <Stack.Screen name="TabBar" component={TabNavigator} />
             <Stack.Screen name="NewScreen" component={NewScreen} />
+            <Stack.Screen name="NewSecondScreen" component={NewSecondScreen} />
+            <Stack.Screen name="NewThirdScreen" component={NewThirdScreen} />
         </Stack.Navigator>
     )
 }

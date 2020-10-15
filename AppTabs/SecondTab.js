@@ -1,8 +1,22 @@
 
 import React from "react";
 import {SafeAreaView, Text, TouchableOpacity} from 'react-native'
+import {useFocusEffect} from "@react-navigation/native";
 
 const SecondTab = props => {
+
+    useFocusEffect(
+        React.useCallback(() => {
+            // Do something when the screen is focused
+            alert('Tab Bar second tab focused')
+            return () => {
+                // Do something when the screen is unfocused
+                // Useful for cleanup functions
+                // alert('Tab Bar second tab unfocused')
+            };
+        }, [])
+    );
+
     return (
         <SafeAreaView>
             <Text>Hello second tab</Text>

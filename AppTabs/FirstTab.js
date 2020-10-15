@@ -8,6 +8,7 @@ import {
 } from "react-native/Libraries/NewAppScreen";
 import React from "react";
 import Carousel from 'react-native-snap-carousel';
+import { useFocusEffect } from '@react-navigation/native';
 
 const FirstTab = props => {
     const entries = ["Entry 1", "Entry 2", "Entry 3", "Entry 4", "Entry 5", "Entry 6"]
@@ -18,6 +19,18 @@ const FirstTab = props => {
             </View>
         );
     }
+
+    useFocusEffect(
+        React.useCallback(() => {
+            // Do something when the screen is focused
+            alert('Tab Bar first tab focused')
+            return () => {
+                // Do something when the screen is unfocused
+                // Useful for cleanup functions
+                // alert('Tab Bar first tab unfocused')
+            };
+        }, [])
+    );
 
     return (
         <>
