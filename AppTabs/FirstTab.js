@@ -32,7 +32,9 @@ const FirstTab = props => {
         console.log(item)
         return (
             <View style={{height: 200, backgroundColor: 'gray', border: 5}}>
-                <Image source={{uri: item}}/>
+                <Image source={{
+                    uri: item
+                }} onError={(error)=>{console.log(error)}} style={{flex: 1,resizeMode: 'cover'}}/>
             </View>
         );
     }
@@ -41,7 +43,6 @@ const FirstTab = props => {
         return <PlatformActivityIndicator/>
     }
 
-    console.log(reducerState.data)
     return (
         <>
             <StatusBar barStyle="dark-content"/>
@@ -101,7 +102,6 @@ const FirstTab = props => {
 
 const ListComponent = props => {
     let list = props.listItems ?? []
-    console.log(list.length)
     return (
         <View style={styles.listContainer}>
             <Text style={styles.listHeader}>{props.heading}</Text>
