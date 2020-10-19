@@ -1,0 +1,1 @@
+export const GET_HOME_DATA_URL = 'https://awein.000webhostapp.com/ashram_home.json';
